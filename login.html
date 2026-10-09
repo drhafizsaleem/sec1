@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Login | Saif Educational Complex</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .bg-animated {
+            background: linear-gradient(-45deg, #721a22, #521319, #2d3748, #1a202c);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-animated min-h-screen flex items-center justify-center font-sans">
+
+    <div class="glass-card p-10 rounded-xl shadow-2xl w-full max-w-md transform transition-all hover:scale-105 duration-300">
+        
+        <div class="text-center mb-8">
+            <img src="1000066805.jpg" alt="Logo" class="h-16 w-auto mx-auto mb-4 rounded shadow-sm">
+            <h1 class="text-2xl font-bold text-gray-900">Portal Login</h1>
+            <p class="text-sm text-gray-500 mt-1">Enter your credentials to access your dashboard</p>
+        </div>
+
+        <form class="space-y-6">
+            <div>
+                <label class="block text-sm font-semibold text-gray-700">Email Address / Registration ID</label>
+                <div class="mt-1 relative rounded-md shadow-sm">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fa-solid fa-user text-gray-400"></i>
+                    </div>
+                    <input type="text" placeholder="e.g. STU-2026-001" class="focus:ring-red-800 focus:border-red-800 block w-full pl-10 sm:text-sm border-gray-300 rounded-md py-3 border transition-colors">
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-sm font-semibold text-gray-700">Password</label>
+                <div class="mt-1 relative rounded-md shadow-sm">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fa-solid fa-lock text-gray-400"></i>
+                    </div>
+                    <input type="password" placeholder="••••••••" class="focus:ring-red-800 focus:border-red-800 block w-full pl-10 sm:text-sm border-gray-300 rounded-md py-3 border transition-colors">
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <input type="checkbox" class="h-4 w-4 text-red-800 focus:ring-red-800 border-gray-300 rounded">
+                    <label class="ml-2 block text-sm text-gray-700"> Remember me </label>
+                </div>
+                <a href="#" class="text-sm font-medium text-red-800 hover:underline">Forgot password?</a>
+            </div>
+
+            <button type="button" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-md text-sm font-bold text-white bg-[#721a22] hover:bg-[#521319] focus:outline-none transition-colors transform hover:-translate-y-0.5">
+                Secure Login <i class="fa-solid fa-arrow-right ml-2 mt-1"></i>
+            </button>
+        </form>
+
+        <div class="mt-8 text-center text-sm text-gray-600">
+            Don't have an account? <a href="admission.html" class="font-bold text-red-800 hover:underline">Apply for Admission</a>
+        </div>
+        <div class="mt-4 text-center">
+            <a href="index.html" class="text-xs text-gray-400 hover:text-gray-800 transition"><i class="fa-solid fa-house"></i> Back to Main Website</a>
+        </div>
+    </div>
+
+</body>
+</html>
