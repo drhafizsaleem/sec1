@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Admission Form | Saif Educational Complex</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans antialiased">
+
+    <div class="max-w-4xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+            
+            <!-- Header -->
+            <div class="bg-[#721a22] px-6 py-8 text-center text-white">
+                <img src="1000066805.jpg" alt="Logo" class="h-16 w-auto mx-auto mb-4 border-2 border-white rounded">
+                <h2 class="text-3xl font-bold uppercase tracking-wide">Application for Admission</h2>
+                <p class="mt-2 text-red-100">Academic Session 2026-2027</p>
+            </div>
+
+            <!-- Form -->
+            <form class="p-8 space-y-8">
+                
+                <!-- Section 1: Student Details -->
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 border-b-2 border-[#721a22] pb-2 mb-4">Student Information</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Full Name (As per B-Form)</label>
+                            <input type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-[#721a22] focus:border-[#721a22]">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Date of Birth</label>
+                            <input type="date" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-[#721a22] focus:border-[#721a22]">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Gender</label>
+                            <select class="mt-1 block w-full border border-gray-300 bg-white rounded-md shadow-sm py-2 px-3 focus:ring-[#721a22] focus:border-[#721a22]">
+                                <option>Select</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">B-Form / CNIC Number</label>
+                            <input type="text" placeholder="00000-0000000-0" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-[#721a22] focus:border-[#721a22]">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2: Parent/Guardian Details -->
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 border-b-2 border-[#721a22] pb-2 mb-4">Parent/Guardian Information</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Father's Name</label>
+                            <input type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-[#721a22] focus:border-[#721a22]">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Father's CNIC</label>
+                            <input type="text" placeholder="00000-0000000-0" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-[#721a22] focus:border-[#721a22]">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Active Mobile Number</label>
+                            <input type="text" placeholder="03XX-XXXXXXX" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-[#721a22] focus:border-[#721a22]">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Home Address</label>
+                            <input type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-[#721a22] focus:border-[#721a22]">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3: Academic Details -->
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 border-b-2 border-[#721a22] pb-2 mb-4">Academic Details</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Applying for Class</label>
+                            <select class="mt-1 block w-full border border-gray-300 bg-white rounded-md shadow-sm py-2 px-3 focus:ring-[#721a22] focus:border-[#721a22]">
+                                <option>Select Class</option>
+                                <option>Grade 9</option>
+                                <option>Grade 10</option>
+                                <option>1st Year</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Previous School Name (If any)</label>
+                            <input type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-[#721a22] focus:border-[#721a22]">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-end pt-4">
+                    <a href="index.html" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 mr-3">Cancel</a>
+                    <button type="button" class="bg-[#721a22] border border-transparent rounded-md shadow-sm py-2 px-6 text-sm font-bold text-white hover:bg-[#521319] focus:outline-none transition-colors">
+                        Submit Application
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+                          </html>
+                          
