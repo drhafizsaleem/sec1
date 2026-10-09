@@ -12,6 +12,16 @@
                     colors: {
                         primary: { DEFAULT: '#721a22', light: '#93222c', dark: '#521319' },
                         secondary: { DEFAULT: '#facc15', dark: '#eab308' }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s ease-out',
+                        'bounce-slow': 'bounce 3s infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
                     }
                 }
             }
@@ -23,6 +33,7 @@
         .ticker-wrap { width: 100%; overflow: hidden; background-color: #521319; color: white; padding: 6px 0; font-size: 14px; border-bottom: 2px solid #facc15; }
         .ticker-move { display: inline-block; white-space: nowrap; animation: ticker 25s linear infinite; }
         @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        /* Smooth scrolling */
         html { scroll-behavior: smooth; }
     </style>
 </head>
@@ -36,73 +47,74 @@
         </div>
     </div>
 
-    <!-- Top Contact Bar -->
-    <div class="bg-white text-gray-600 text-xs py-2 border-b">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-            <div class="mb-2 md:mb-0">
-                <i class="fa-solid fa-phone text-primary mr-1"></i> 0303-4184485 
-                <span class="mx-2 hidden md:inline">|</span> 
-                <i class="fa-solid fa-envelope text-primary mr-1"></i> naeemullahsaifkaifi@gmail.com
-            </div>
-        </div>
-    </div>
-
     <!-- Main Navigation Bar -->
     <nav class="bg-white shadow-xl sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex items-center justify-between h-24">
-                
                 <!-- Logo & Brand -->
                 <div class="flex items-center transform transition hover:scale-105 duration-300">
-                    <img src="logo.jpg" alt="Logo" class="h-16 md:h-20 w-auto mr-3 border border-gray-100 rounded shadow-sm">
+                    <img src="1000066805.jpg" alt="Logo" class="h-20 w-auto mr-4 border border-gray-100 rounded shadow-sm">
                     <div class="flex flex-col">
-                        <span class="font-extrabold text-lg md:text-2xl tracking-tight text-primary uppercase">Saif Educational Complex</span>
-                        <span class="text-[10px] md:text-xs text-gray-500 font-bold tracking-widest uppercase">Education is Power</span>
+                        <span class="font-extrabold text-2xl tracking-tight text-primary uppercase">Saif Educational Complex</span>
+                        <span class="text-xs text-gray-500 font-bold tracking-widest uppercase">Education is Power</span>
                     </div>
                 </div>
                 
-                <!-- Always Visible Login Button & Mobile Menu Toggle -->
-                <div class="flex items-center space-x-4">
-                    <a href="login.html" class="bg-primary text-white px-4 py-2 md:px-6 md:py-2.5 rounded-md hover:bg-primary-dark transition shadow-lg flex items-center border-2 border-primary hover:border-white text-sm md:text-base font-bold">
-                        <i class="fa-solid fa-user-lock md:mr-2"></i> <span class="hidden md:inline">Portal Login</span>
+                <!-- Expanded Menu -->
+                <div class="hidden lg:flex space-x-1 font-bold text-sm items-center">
+                    <a href="#" class="text-primary border-b-2 border-primary px-3 py-2">Home</a>
+                    
+                    <!-- Admissions Dropdown -->
+                    <div class="relative dropdown px-2 py-2">
+                        <button class="text-gray-700 hover:text-primary transition flex items-center">
+                            Admissions <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="dropdown-menu hidden absolute top-full left-0 bg-white shadow-xl border-t-4 border-primary w-56 py-2 rounded-b-md">
+                            <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-primary border-b"><i class="fa-solid fa-school w-5"></i> Colleges & Uni</a>
+                            <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-primary border-b"><i class="fa-solid fa-award w-5"></i> Scholarships</a>
+                            <a href="admission.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-primary"><i class="fa-solid fa-file-signature w-5"></i> Apply Online</a>
+                        </div>
+                    </div>
+
+                    <!-- E-Learning Dropdown -->
+                    <div class="relative dropdown px-2 py-2">
+                        <button class="text-gray-700 hover:text-primary transition flex items-center">
+                            E-Learning <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="dropdown-menu hidden absolute top-full left-0 bg-white shadow-xl border-t-4 border-secondary w-56 py-2 rounded-b-md">
+                            <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-primary border-b"><i class="fa-solid fa-book-open w-5"></i> Study Material & Notes</a>
+                            <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-primary border-b"><i class="fa-solid fa-video w-5"></i> Video Lectures</a>
+                            <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-primary"><i class="fa-solid fa-laptop-code w-5"></i> MCQs & Quizzes</a>
+                        </div>
+                    </div>
+
+                    <!-- Examinations Dropdown -->
+                    <div class="relative dropdown px-2 py-2">
+                        <button class="text-gray-700 hover:text-primary transition flex items-center">
+                            Examinations <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="dropdown-menu hidden absolute top-full left-0 bg-white shadow-xl border-t-4 border-primary w-52 py-2 rounded-b-md">
+                            <a href="#student-services" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-primary border-b"><i class="fa-solid fa-square-poll-vertical w-5"></i> Check Results</a>
+                            <a href="#student-services" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-primary border-b"><i class="fa-solid fa-id-card w-5"></i> Roll No Slips</a>
+                            <a href="#student-services" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-primary"><i class="fa-regular fa-calendar-days w-5"></i> Date Sheets</a>
+                        </div>
+                    </div>
+
+                    <!-- Info Dropdown -->
+                    <div class="relative dropdown px-2 py-2">
+                        <button class="text-gray-700 hover:text-primary transition flex items-center">
+                            Explore <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="dropdown-menu hidden absolute top-full right-0 bg-white shadow-xl border-t-4 border-secondary w-48 py-2 rounded-b-md">
+                            <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-primary border-b"><i class="fa-solid fa-chalkboard-user w-5"></i> Faculty Profiles</a>
+                            <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-primary border-b"><i class="fa-solid fa-briefcase w-5"></i> Jobs Portal</a>
+                            <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-primary"><i class="fa-solid fa-bell w-5"></i> Official Notices</a>
+                        </div>
+                    </div>
+
+                    <a href="login.html" class="ml-4 bg-primary text-white px-6 py-2.5 rounded-md hover:bg-primary-dark transition shadow-lg flex items-center border-2 border-primary hover:border-white">
+                        <i class="fa-solid fa-user-lock mr-2"></i> Portal Login
                     </a>
-                </div>
-
-            </div>
-
-            <!-- Desktop Menu (Hidden on Mobile) -->
-            <div class="hidden lg:flex space-x-1 font-bold text-sm pb-3 border-t pt-3 justify-center">
-                <a href="#" class="text-primary border-b-2 border-primary px-3 py-2">Home</a>
-                
-                <div class="relative dropdown px-2 py-2">
-                    <button class="text-gray-700 hover:text-primary transition flex items-center">
-                        Admissions <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
-                    </button>
-                    <div class="dropdown-menu hidden absolute top-full left-0 bg-white shadow-xl border-t-4 border-primary w-56 py-2 rounded-b-md">
-                        <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-primary border-b"><i class="fa-solid fa-school w-5"></i> Colleges & Uni</a>
-                        <a href="admission.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-primary"><i class="fa-solid fa-file-signature w-5"></i> Apply Online</a>
-                    </div>
-                </div>
-
-                <div class="relative dropdown px-2 py-2">
-                    <button class="text-gray-700 hover:text-primary transition flex items-center">
-                        E-Learning <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
-                    </button>
-                    <div class="dropdown-menu hidden absolute top-full left-0 bg-white shadow-xl border-t-4 border-secondary w-56 py-2 rounded-b-md">
-                        <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-primary border-b"><i class="fa-solid fa-book-open w-5"></i> Study Material</a>
-                        <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-primary"><i class="fa-solid fa-video w-5"></i> Video Lectures</a>
-                    </div>
-                </div>
-
-                <div class="relative dropdown px-2 py-2">
-                    <button class="text-gray-700 hover:text-primary transition flex items-center">
-                        Examinations <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
-                    </button>
-                    <div class="dropdown-menu hidden absolute top-full left-0 bg-white shadow-xl border-t-4 border-primary w-52 py-2 rounded-b-md">
-                        <a href="#student-services" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-primary border-b"><i class="fa-solid fa-square-poll-vertical w-5"></i> Check Results</a>
-                        <a href="#student-services" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-primary border-b"><i class="fa-solid fa-id-card w-5"></i> Roll No Slips</a>
-                        <a href="#student-services" class="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-primary"><i class="fa-regular fa-calendar-days w-5"></i> Date Sheets</a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -111,67 +123,118 @@
     <!-- Animated Hero Section -->
     <div class="relative bg-primary text-white overflow-hidden">
         <div class="absolute inset-0 bg-black opacity-60 z-10"></div>
-        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
-        <div class="relative z-20 max-w-7xl mx-auto px-4 py-20 md:py-24 text-center">
-            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 drop-shadow-2xl">Digital Education Excellence</h1>
-            <p class="mt-4 max-w-3xl text-lg md:text-xl mx-auto mb-10 font-medium drop-shadow-md text-gray-200">One-click access to Results, Roll Number Slips, Date Sheets, and world-class E-Learning material.</p>
-            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
-                <a href="#student-services" class="inline-block bg-white text-primary font-bold py-3 px-8 rounded shadow-xl hover:bg-gray-200 transition-colors"><i class="fa-solid fa-bolt mr-2"></i> Quick E-Services</a>
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center transform hover:scale-110 transition duration-1000 ease-in-out"></div>
+        <div class="relative z-20 max-w-7xl mx-auto px-4 py-24 text-center animate-fade-in-up">
+            <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-6 drop-shadow-2xl">Digital Education Excellence</h1>
+            <p class="mt-4 max-w-3xl text-xl mx-auto mb-10 font-medium drop-shadow-md text-gray-200">One-click access to Results, Roll Number Slips, Date Sheets, and world-class E-Learning material.</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#student-services" class="inline-block bg-white text-primary font-bold py-3 px-8 rounded shadow-xl hover:bg-gray-200 transition-colors transform hover:-translate-y-1"><i class="fa-solid fa-bolt mr-2"></i> Quick E-Services</a>
+                <a href="admission.html" class="inline-block bg-secondary text-primary font-bold py-3 px-8 rounded shadow-xl hover:bg-yellow-500 transition-colors transform hover:-translate-y-1"><i class="fa-solid fa-file-signature mr-2"></i> Apply Admission</a>
             </div>
         </div>
     </div>
 
-    <!-- Principal Message Section -->
-    <div class="max-w-7xl mx-auto px-4 py-16">
-        <div class="bg-white rounded-lg shadow-md border-l-4 border-primary p-8 flex flex-col md:flex-row items-center gap-8">
-            <img class="h-40 w-40 object-cover rounded-full shadow-lg border-4 border-gray-100" src="https://ui-avatars.com/api/?name=Naeemullah+Kaifi&background=721a22&color=fff&size=200" alt="Principal">
-            <div>
-                <h2 class="text-2xl font-bold text-gray-900 mb-2">Message from the Principal</h2>
-                <p class="text-gray-600 italic mb-4">"Our goal at Saif Educational Complex is not just to impart knowledge, but to instill strong moral values and a thirst for lifelong learning. We are continuously upgrading our systems, like this very online portal, to facilitate our students and parents in the digital age."</p>
-                <h3 class="font-bold text-primary">Naeemullah Kaifi</h3>
-                <p class="text-sm text-gray-500">Principal, Saif Educational Complex</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- STUDENT E-SERVICES SECTION -->
-    <div id="student-services" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 mt-8">
+    <!-- STUDENT E-SERVICES SECTION (High Priority Features) -->
+    <div id="student-services" class="relative -mt-10 z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         <div class="bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-200">
-            <div class="bg-gray-100 border-b border-gray-200 px-6 py-4 flex flex-wrap justify-between items-center">
+            <div class="bg-gray-100 border-b border-gray-200 px-6 py-4 flex flex-wrap gap-2 md:gap-0 justify-between items-center">
                 <h2 class="text-xl font-bold text-gray-900"><i class="fa-solid fa-laptop-file text-primary mr-2"></i> Student Quick Services</h2>
+                <span class="text-sm font-semibold text-gray-500">Public Access Portal</span>
             </div>
             
             <div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+                
                 <!-- Online Results Form -->
-                <div class="bg-blue-50 p-5 rounded-lg border border-blue-100">
+                <div class="bg-blue-50 p-5 rounded-lg border border-blue-100 hover:shadow-md transition">
                     <div class="text-blue-700 text-3xl mb-3"><i class="fa-solid fa-square-poll-vertical"></i></div>
                     <h3 class="text-lg font-bold text-blue-900 mb-2">Check Online Results</h3>
-                    <form class="space-y-3 mt-4">
+                    <p class="text-sm text-blue-700 mb-4">View your exam results instantly.</p>
+                    <form class="space-y-3">
+                        <select class="w-full text-sm border-gray-300 rounded p-2 focus:ring-blue-500 focus:border-blue-500">
+                            <option>Select Exam Type</option>
+                            <option>Annual Exam 2026</option>
+                            <option>Mid Term 2026</option>
+                        </select>
                         <input type="text" placeholder="Enter Roll Number" class="w-full text-sm border-gray-300 rounded p-2 focus:ring-blue-500 focus:border-blue-500">
                         <button type="button" class="w-full bg-blue-600 text-white font-bold py-2 rounded hover:bg-blue-700 transition">Get Result</button>
                     </form>
                 </div>
 
                 <!-- Roll No Slips Form -->
-                <div class="bg-green-50 p-5 rounded-lg border border-green-100">
+                <div class="bg-green-50 p-5 rounded-lg border border-green-100 hover:shadow-md transition">
                     <div class="text-green-700 text-3xl mb-3"><i class="fa-solid fa-id-card-clip"></i></div>
                     <h3 class="text-lg font-bold text-green-900 mb-2">Roll Number Slips</h3>
-                    <form class="space-y-3 mt-4">
+                    <p class="text-sm text-green-700 mb-4">Download slips for upcoming exams.</p>
+                    <form class="space-y-3">
+                        <select class="w-full text-sm border-gray-300 rounded p-2 focus:ring-green-500 focus:border-green-500">
+                            <option>Select Class / Grade</option>
+                            <option>Grade 9</option>
+                            <option>Grade 10</option>
+                        </select>
                         <input type="text" placeholder="B-Form / Admission No" class="w-full text-sm border-gray-300 rounded p-2 focus:ring-green-500 focus:border-green-500">
                         <button type="button" class="w-full bg-green-600 text-white font-bold py-2 rounded hover:bg-green-700 transition">Download Slip</button>
                     </form>
                 </div>
 
                 <!-- Date Sheets & Extras -->
-                <div class="bg-yellow-50 p-5 rounded-lg border border-yellow-200">
-                    <div class="text-yellow-700 text-3xl mb-3"><i class="fa-regular fa-calendar-check"></i></div>
-                    <h3 class="text-lg font-bold text-yellow-900 mb-2">Date Sheets</h3>
-                    <ul class="space-y-2 mb-4 mt-4">
-                        <li><a href="#" class="text-sm font-semibold text-yellow-800 hover:underline"><i class="fa-solid fa-download mr-1"></i> Matric Annual Date Sheet 2026</a></li>
-                        <li><a href="#" class="text-sm font-semibold text-yellow-800 hover:underline"><i class="fa-solid fa-download mr-1"></i> Middle Standard Date Sheet</a></li>
-                    </ul>
-                    <button type="button" class="w-full bg-yellow-500 text-yellow-900 font-bold py-2 rounded hover:bg-yellow-600 transition">View All</button>
+                <div class="bg-yellow-50 p-5 rounded-lg border border-yellow-200 hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="text-yellow-700 text-3xl mb-3"><i class="fa-regular fa-calendar-check"></i></div>
+                        <h3 class="text-lg font-bold text-yellow-900 mb-2">Date Sheets & Downloads</h3>
+                        <p class="text-sm text-yellow-700 mb-4">Access exam schedules and challans.</p>
+                        <ul class="space-y-2 mb-4">
+                            <li><a href="#" class="text-sm font-semibold text-yellow-800 hover:underline"><i class="fa-solid fa-download mr-1"></i> Matric Annual Date Sheet 2026</a></li>
+                            <li><a href="#" class="text-sm font-semibold text-yellow-800 hover:underline"><i class="fa-solid fa-download mr-1"></i> Middle Standard Date Sheet</a></li>
+                        </ul>
+                    </div>
+                    <button type="button" class="w-full bg-yellow-500 text-yellow-900 font-bold py-2 rounded hover:bg-yellow-600 transition">View All Schedules</button>
                 </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Features & Modules -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-extrabold text-gray-900 border-b-4 border-primary inline-block pb-2">Academic Operations</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Learning Material -->
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center hover:shadow-xl transition transform hover:-translate-y-2 cursor-pointer group">
+                <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl group-hover:bg-secondary group-hover:text-primary transition">
+                    <i class="fa-solid fa-book-open-reader"></i>
+                </div>
+                <h3 class="font-bold text-gray-900">Study Material</h3>
+                <p class="text-xs text-gray-500 mt-2">Past papers, notes & digital books</p>
+            </div>
+            
+            <!-- Video Lectures -->
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center hover:shadow-xl transition transform hover:-translate-y-2 cursor-pointer group">
+                <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl group-hover:bg-secondary group-hover:text-primary transition">
+                    <i class="fa-solid fa-circle-play"></i>
+                </div>
+                <h3 class="font-bold text-gray-900">Online Classes</h3>
+                <p class="text-xs text-gray-500 mt-2">Recorded lectures by verified teachers</p>
+            </div>
+
+            <!-- Jobs / Careers -->
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center hover:shadow-xl transition transform hover:-translate-y-2 cursor-pointer group">
+                <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl group-hover:bg-secondary group-hover:text-primary transition">
+                    <i class="fa-solid fa-user-tie"></i>
+                </div>
+                <h3 class="font-bold text-gray-900">Careers & Jobs</h3>
+                <p class="text-xs text-gray-500 mt-2">Teaching and admin staff vacancies</p>
+            </div>
+
+            <!-- Online Mock Tests -->
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center hover:shadow-xl transition transform hover:-translate-y-2 cursor-pointer group">
+                <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl group-hover:bg-secondary group-hover:text-primary transition">
+                    <i class="fa-solid fa-list-check"></i>
+                </div>
+                <h3 class="font-bold text-gray-900">Mock Tests (MCQs)</h3>
+                <p class="text-xs text-gray-500 mt-2">Practice tests and self-assessments</p>
             </div>
         </div>
     </div>
@@ -180,30 +243,30 @@
     <footer class="bg-gray-900 text-gray-300 py-12 mt-12 border-t-4 border-secondary">
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
             <div class="md:col-span-1">
-                <img src="logo.jpg" alt="Logo" class="h-16 w-auto mb-4 rounded bg-white p-1">
+                <img src="1000066805.jpg" alt="Logo" class="h-16 w-auto mb-4 rounded bg-white p-1">
                 <p class="text-sm text-gray-400 mb-4">A complete Learning Management System designed to empower students, teachers, and administrators.</p>
+            </div>
+            <div>
+                <h3 class="text-white text-lg font-bold mb-4 border-b border-gray-700 pb-2">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-secondary transition-colors"><i class="fa-solid fa-angle-right mr-1"></i> About Us</a></li>
+                    <li><a href="admission.html" class="hover:text-secondary transition-colors"><i class="fa-solid fa-angle-right mr-1"></i> Online Admission</a></li>
+                    <li><a href="#" class="hover:text-secondary transition-colors"><i class="fa-solid fa-angle-right mr-1"></i> Fee Structure</a></li>
+                    <li><a href="#" class="hover:text-secondary transition-colors"><i class="fa-solid fa-angle-right mr-1"></i> Careers</a></li>
+                </ul>
             </div>
             <div>
                 <h3 class="text-white text-lg font-bold mb-4 border-b border-gray-700 pb-2">E-Services</h3>
                 <ul class="space-y-2 text-sm">
                     <li><a href="#student-services" class="hover:text-secondary transition-colors"><i class="fa-solid fa-angle-right mr-1"></i> Verify Results</a></li>
                     <li><a href="#student-services" class="hover:text-secondary transition-colors"><i class="fa-solid fa-angle-right mr-1"></i> Roll No Slips</a></li>
+                    <li><a href="#student-services" class="hover:text-secondary transition-colors"><i class="fa-solid fa-angle-right mr-1"></i> Date Sheets</a></li>
                     <li><a href="login.html" class="hover:text-secondary transition-colors"><i class="fa-solid fa-angle-right mr-1"></i> Portal Login</a></li>
                 </ul>
             </div>
-            <div class="md:col-span-2">
+            <div>
                 <h3 class="text-white text-lg font-bold mb-4 border-b border-gray-700 pb-2">Contact Us</h3>
                 <ul class="space-y-3 text-sm text-gray-400">
-                    <li class="flex items-start"><i class="fa-solid fa-location-dot mt-1 w-5 text-secondary"></i> Arifwala, Punjab, Pakistan</li>
-                    <li class="flex items-start"><i class="fa-solid fa-phone mt-1 w-5 text-secondary"></i> 0303-4184485</li>
-                    <li class="flex items-start"><i class="fa-solid fa-envelope mt-1 w-5 text-secondary"></i> naeemullahsaifkaifi@gmail.com</li>
-                </ul>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 mt-8 pt-6 border-t border-gray-800 text-sm text-center text-gray-500">
-            <p>&copy; 2026 Saif Educational Complex. All rights reserved.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+                    <li class="flex items-start"><i class="fa-solid fa-location-dot mt-1 w-5 text-secondary"></i> Main Campus, Education City</li>
+                    <li class="flex items-start"><i class="fa-solid fa-phone mt-1 w-5 text-secondary"></i> +92 300 0000000</li>
+                    <li class="flex items-start"><i class="fa-solid fa-envelope mt-1 w-5 text-secondary"></i> info@saifeducati
