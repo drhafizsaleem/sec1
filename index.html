@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saif Educational Complex | Official Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { DEFAULT: '#721a22', light: '#93222c', dark: '#521319' }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s ease-out',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Custom dropdown hover effect */
+        .dropdown:hover .dropdown-menu { display: block; }
+        .ticker-wrap { width: 100%; overflow: hidden; background-color: #521319; color: white; padding: 5px 0; font-size: 14px; }
+        .ticker-move { display: inline-block; white-space: nowrap; animation: ticker 25s linear infinite; }
+        @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans antialiased text-gray-800">
+
+    <!-- News Ticker (BISE Style) -->
+    <div class="ticker-wrap flex items-center">
+        <span class="bg-red-600 font-bold px-3 py-1 ml-2 z-10 shadow-md">LATEST UPDATES</span>
+        <div class="ticker-move ml-4 font-semibold tracking-wide">
+            ★ Admissions for Session 2026-2027 are now OPEN. ★ Middle & Matric Results have been announced. Check the Online Results portal. ★ Annual Sports Gala is scheduled for next month.
+        </div>
+    </div>
+
+    <!-- Top Contact Bar -->
+    <div class="bg-white text-gray-600 text-xs py-2 border-b">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <div><i class="fa-solid fa-phone text-primary mr-1"></i> +92 300 0000000 <span class="mx-2">|</span> <i class="fa-solid fa-envelope text-primary mr-1"></i> info@saifeducational.edu.pk</div>
+            <div class="space-x-4">
+                <a href="login.html" class="text-primary font-bold hover:underline"><i class="fa-solid fa-user-graduate mr-1"></i> Student Portal</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between h-24">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="1000066805.jpg" alt="Logo" class="h-20 w-auto mr-4">
+                    <div class="flex flex-col">
+                        <span class="font-extrabold text-2xl tracking-tight text-primary uppercase">Saif Educational Complex</span>
+                        <span class="text-sm text-gray-500 font-bold tracking-widest">Education is Power</span>
+                    </div>
+                </div>
+                <!-- Menu -->
+                <div class="hidden md:flex space-x-1 font-semibold text-sm">
+                    <a href="#" class="text-primary border-b-2 border-primary px-3 py-2">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-primary px-3 py-2 transition">About Us</a>
+                    
+                    <!-- Dropdown for Admissions -->
+                    <div class="relative dropdown px-3 py-2">
+                        <button class="text-gray-700 hover:text-primary transition flex items-center">
+                            Admissions <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="dropdown-menu hidden absolute top-full left-0 bg-white shadow-xl border-t-2 border-primary w-48 py-2 rounded-b-md">
+                            <a href="admission.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary">Apply Online</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary">Fee Structure</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary">Download Prospectus</a>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown for Results -->
+                    <div class="relative dropdown px-3 py-2">
+                        <button class="text-gray-700 hover:text-primary transition flex items-center">
+                            Examinations <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="dropdown-menu hidden absolute top-full left-0 bg-white shadow-xl border-t-2 border-primary w-48 py-2 rounded-b-md">
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary">Online Results</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary">Date Sheets</a>
+                        </div>
+                    </div>
+                    
+                    <a href="login.html" class="bg-primary text-white px-5 py-2 rounded-md hover:bg-primary-dark transition shadow-md flex items-center animate-pulse-slow">
+                        <i class="fa-solid fa-right-to-bracket mr-2"></i> Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Animated Hero Section -->
+    <div class="relative bg-primary text-white overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center transform hover:scale-105 transition duration-700 ease-in-out"></div>
+        <div class="relative z-20 max-w-7xl mx-auto px-4 py-32 text-center animate-fade-in-up">
+            <h1 class="text-5xl font-extrabold tracking-tight mb-4 drop-shadow-lg">Excellence in Education</h1>
+            <p class="mt-4 max-w-2xl text-xl mx-auto mb-8 font-medium drop-shadow-md">Shaping character and building futures through modern learning methodologies.</p>
+            <a href="admission.html" class="inline-block bg-white text-primary font-bold py-3 px-8 rounded shadow-xl hover:bg-gray-200 transition-colors transform hover:-translate-y-1">Start Admission Process</a>
+        </div>
+    </div>
+
+    <!-- Principal Message (Formal Style) -->
+    <div class="max-w-7xl mx-auto px-4 py-16">
+        <div class="bg-white rounded-lg shadow-md border-l-4 border-primary p-8 flex flex-col md:flex-row items-center gap-8 animate-fade-in-up">
+            <img class="h-40 w-40 object-cover rounded-full shadow-lg border-4 border-gray-100" src="https://ui-avatars.com/api/?name=Principal&background=721a22&color=fff&size=200" alt="Principal">
+            <div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">Message from the Principal</h2>
+                <p class="text-gray-600 italic mb-4">"Our goal at Saif Educational Complex is not just to impart knowledge, but to instill strong moral values and a thirst for lifelong learning. We are continuously upgrading our systems, like this very online portal, to facilitate our students and parents in the digital age."</p>
+                <h3 class="font-bold text-primary">Dr. John Doe</h3>
+                <p class="text-sm text-gray-500">Principal, Saif Educational Complex</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+  </html>
+  
